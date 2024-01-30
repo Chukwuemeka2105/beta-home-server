@@ -28,4 +28,4 @@ const requirePermission = (role) => {
   };
 };
 
-module.exports = { auth, requirePermission };
+module.exports = { authentication, requirePermission };

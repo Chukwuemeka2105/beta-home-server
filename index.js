@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 const cors = require("cors");
 const mongoose = require("mongoose");
 const profileRouter = require("./routes/profileRouter")
+const inspectionRouter = require("./routes/inspectionRouter")
 
 app.use(express.json())
 app.use(cors())
@@ -14,6 +15,7 @@ app.get('/', (req, res) => {
     res.status(200).send("BETA HOME SERVER")
 })
 app.use("/api/v1", profileRouter)
+app.use("/api/v1", inspectionRouter)
 // error route
 app.use((req,res)=> {
     res.status(404).send("RESOURCE NOT FOUND")
