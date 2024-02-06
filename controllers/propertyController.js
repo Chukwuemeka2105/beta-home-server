@@ -262,8 +262,8 @@ const handleFeaturedProperties = async (req, res) =>{
     const housedProperties = await Property.find({propertyType: 'house'}).limit(3)
     const landedProperties = await Property.find({propertyType: 'land'}).limit(3)
 
-    const properties = [...housedProperties, ...landedProperties]
-    res.status(200).json({success: true, properties})
+    const featuredProperties = [...housedProperties, ...landedProperties]
+    res.status(200).json({success: true, featuredProperties})
   } catch (error) {
     console.log(error);
     res.json(error)
